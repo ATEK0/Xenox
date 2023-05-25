@@ -1,0 +1,1250 @@
+WindowManager:
+    Login:
+    DashboardGerente:
+    ServersDown:
+
+<Content_encomendas_info>:
+    orientation: "vertical"
+    spacing: "12dp"
+    size_hint_y: None
+    height: "20dp"
+    id: content_dialog_info_encomendas
+
+
+
+
+
+
+
+
+
+
+
+
+
+<Content_produtos_info>:
+    orientation: "vertical"
+    spacing: "12dp"
+    size_hint_y: None
+    height: "20dp"
+    id: content_dialog_info_produtos
+
+
+
+<Content_produtos_search>:
+    orientation: "vertical"
+    spacing: "12dp"
+    size_hint_y: None
+    height: "70dp"
+    MDTextField:
+        id: produtos_name_search
+        hint_text: "Nome do produto a procurar"
+        mode: "rectangle"
+        color: 1, 0, 1, 1
+        on_text: app.search_produtos = self.text
+        line_color_focus: 0.5, 0, 1, 1
+    GridLayout:
+        cols: 2
+        padding: 350, 8,0,0
+        MDRaisedButton:
+            text: "Cancelar"
+            on_press: root.limpar_box()
+            md_bg_color: 0,0,0,0
+        MDRaisedButton:
+            text: "Alterar"
+            padding: 10, 10
+            on_press: root.limpar_later()
+            md_bg_color: 0,0,0,0
+
+<Content_produtos_remove>:
+    orientation: "vertical"
+    spacing: "12dp"
+    size_hint_y: None
+    height: "70dp"
+    id: content_dialog_remove_produtos
+    MDTextField:
+        id: produtos_name_remove
+        hint_text: "ID do produto a remover"
+        mode: "rectangle"
+        color: 1, 0, 1, 1
+        on_text: app.remover_produtos = self.text
+        line_color_focus: 0.5, 0, 1, 1
+    GridLayout:
+        cols: 2
+        padding: 350, 8,0,0
+        MDRaisedButton:
+            text: "Cancelar"
+            on_press: root.limpar_box()
+            md_bg_color: 0,0,0,0
+        MDRaisedButton:
+            text: "Alterar"
+            padding: 10, 10
+            on_press: root.limpar_later()
+            md_bg_color: 0,0,0,0
+
+
+<Content_produtos>:
+    orientation: "vertical"
+    spacing: "12dp"
+    size_hint_y: None
+    height: "370dp"
+    id: content_dialog_add_produtos
+    GridLayout: 
+        cols:1
+        MDTextField:
+            id: nome_produtos
+            hint_text: "Nome"
+            mode: "rectangle"
+            max_text_length: 250
+            color: 1, 0, 1, 1
+            on_text: app.nome_produtos = self.text
+            line_color_focus: 0.5, 0, 1, 1
+        MDTextField:
+            id: id_produtos
+            hint_text: "ID"
+            mode: "rectangle"
+            color: 1, 0, 1, 1
+            max_text_length: 8
+            on_text: app.id_produtos = self.text
+            line_color_focus: 0.5, 0, 1, 1
+        MDTextField:
+            id: seccao_produtos
+            hint_text: app.seccao_add_text
+            mode: "rectangle"
+            disabled: app.seccao_add_disabled
+            color: 1, 0, 1, 1
+            on_text: app.seccao_produtos = self.text
+            line_color_focus: 0.5, 0, 1, 1
+        MDTextField:
+            id: preco_produtos
+            hint_text: "Preço, se usar casas decimais utilize '.'"
+            mode: "rectangle"
+            color: 1, 0, 1, 1
+            on_text: app.preco_produtos = self.text
+            line_color_focus: 0.5, 0, 1, 1
+        MDTextField:
+            id: stock_produtos
+            hint_text: "Stock"
+            mode: "rectangle"
+            color: 1, 0, 1, 1
+            on_text: app.stock_produtos = self.text
+            line_color_focus: 0.5, 0, 1, 1
+        MDTextField:
+            id: fornecedor_produtos
+            hint_text: "Fornecedor"
+            mode: "rectangle"
+            color: 1, 0, 1, 1
+            on_text: app.fornecedor_produtos = self.text
+            line_color_focus: 0.5, 0, 1, 1
+        MDTextField:
+            id: desc_produtos
+            hint_text: "Descrição"
+            mode: "rectangle"
+            color: 1, 0, 1, 1
+            on_text: app.desc_produtos = self.text
+            line_color_focus: 0.5, 0, 1, 1
+
+
+
+        GridLayout:
+            cols: 2
+            padding: 350, 8,0,0
+            MDRaisedButton:
+                text: "Cancelar"
+                on_press: root.limpar_cols1()
+                md_bg_color: 0,0,0,0
+            MDRaisedButton:
+                text: "Alterar"
+                padding: 10, 10
+                on_press: root.limpar_cols(),
+                md_bg_color: 0,0,0,0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<Content_empregados_info>:
+    orientation: "vertical"
+    spacing: "12dp"
+    size_hint_y: None
+    height: "20dp"
+    id: content_dialog_info_empregados
+
+
+
+<Content_empregados_search>:
+    orientation: "vertical"
+    spacing: "12dp"
+    size_hint_y: None
+    height: "70dp"
+    MDTextField:
+        id: empregados_name_search
+        hint_text: "Nome do empregado a procurar"
+        mode: "rectangle"
+        color: 1, 0, 1, 1
+        on_text: app.search_empregados = self.text
+        line_color_focus: 0.5, 0, 1, 1
+    GridLayout:
+        cols: 2
+        padding: 350, 8,0,0
+        MDRaisedButton:
+            text: "Cancelar"
+            on_press: root.limpar_box()
+            md_bg_color: 0,0,0,0
+        MDRaisedButton:
+            text: "Alterar"
+            padding: 10, 10
+            on_press: root.limpar_later()
+            md_bg_color: 0,0,0,0
+
+<Content_empregados_remove>:
+    orientation: "vertical"
+    spacing: "12dp"
+    size_hint_y: None
+    height: "70dp"
+    id: content_dialog_remove_empregados
+    MDTextField:
+        id: empregados_name_remove
+        hint_text: "ID do empregado a remover"
+        mode: "rectangle"
+        color: 1, 0, 1, 1
+        on_text: app.remover_empregados = self.text
+        line_color_focus: 0.5, 0, 1, 1
+    GridLayout:
+        cols: 2
+        padding: 350, 8,0,0
+        MDRaisedButton:
+            text: "Cancelar"
+            on_press: root.limpar_box()
+            md_bg_color: 0,0,0,0
+        MDRaisedButton:
+            text: "Alterar"
+            padding: 10, 10
+            on_press: root.limpar_later()
+            md_bg_color: 0,0,0,0
+
+
+<Content_empregados>:
+    orientation: "vertical"
+    spacing: "12dp"
+    size_hint_y: None
+    height: "320dp"
+    id: content_dialog_add_empregados
+    GridLayout: 
+        cols:1
+        MDTextField:
+            id: empregados_name
+            hint_text: "Nome"
+            mode: "rectangle"
+            color: 1, 0, 1, 1
+            on_text: app.nome_empregados = self.text
+            line_color_focus: 0.5, 0, 1, 1
+
+        MDTextField:
+            id: cargo_empregados
+            hint_text: "Cargo"
+            mode: "rectangle"
+            color: 1, 0, 1, 1
+            on_text: app.cargo_empregados = self.text
+            line_color_focus: 0.5, 0, 1, 1
+        MDTextField:
+            id: password_empregados
+            hint_text: "Password"
+            mode: "rectangle"
+            color: 1, 0, 1, 1
+            on_text: app.password_empregados = self.text
+            line_color_focus: 0.5, 0, 1, 1
+        MDTextField:
+            id: estado_empregados
+            hint_text: "Estado"
+            mode: "rectangle"
+            color: 1, 0, 1, 1
+            on_text: app.estado_empregados = self.text
+            line_color_focus: 0.5, 0, 1, 1
+        MDTextField:
+            id: salario_empregados
+            hint_text: "Salário"
+            mode: "rectangle"
+            color: 1, 0, 1, 1
+            on_text: app.salario_empregados = self.text
+            line_color_focus: 0.5, 0, 1, 1
+        MDTextField:
+            id: seccao_empregados
+            hint_text: "Secção"
+            mode: "rectangle"
+            color: 1, 0, 1, 1
+            on_text: app.seccao_empregados = self.text
+            line_color_focus: 0.5, 0, 1, 1
+
+
+
+        GridLayout:
+            cols: 2
+            padding: 350, 8,0,0
+            MDRaisedButton:
+                text: "Cancelar"
+                on_press: root.limpar_cols1()
+                md_bg_color: 0,0,0,0
+            MDRaisedButton:
+                text: "Alterar"
+                padding: 10, 10
+                on_press: root.limpar_cols(),
+                md_bg_color: 0,0,0,0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<Content_seccao_info>:
+    orientation: "vertical"
+    spacing: "12dp"
+    size_hint_y: None
+    height: "20dp"
+    id: content_dialog_info_seccao
+
+
+
+<Content_seccao_search>:
+    orientation: "vertical"
+    spacing: "12dp"
+    size_hint_y: None
+    height: "70dp"
+    MDTextField:
+        id: seccao_name_search
+        hint_text: "Nome da secção a procurar"
+        mode: "rectangle"
+        color: 1, 0, 1, 1
+        on_text: app.search_seccao = self.text
+        line_color_focus: 0.5, 0, 1, 1
+    GridLayout:
+        cols: 2
+        padding: 350, 8,0,0
+        MDRaisedButton:
+            text: "Cancelar"
+            on_press: root.limpar_box()
+            md_bg_color: 0,0,0,0
+        MDRaisedButton:
+            text: "Alterar"
+            padding: 10, 10
+            on_press: root.limpar_later()
+            md_bg_color: 0,0,0,0
+
+<Content_seccao_remove>:
+    orientation: "vertical"
+    spacing: "12dp"
+    size_hint_y: None
+    height: "70dp"
+    id: content_dialog_remove_seccao
+    MDTextField:
+        id: seccao_name_remove
+        hint_text: "Nome da secção a remover"
+        mode: "rectangle"
+        color: 1, 0, 1, 1
+        on_text: app.remover_seccao = self.text
+        line_color_focus: 0.5, 0, 1, 1
+    GridLayout:
+        cols: 2
+        padding: 350, 8,0,0
+        MDRaisedButton:
+            text: "Cancelar"
+            on_press: root.limpar_box()
+            md_bg_color: 0,0,0,0
+        MDRaisedButton:
+            text: "Alterar"
+            padding: 10, 10
+            on_press: root.limpar_later()
+            md_bg_color: 0,0,0,0
+
+
+<Content_seccao>:
+    orientation: "vertical"
+    spacing: "12dp"
+    size_hint_y: None
+    height: "110dp"
+    id: content_dialog_add_seccao
+    GridLayout: 
+        cols:1
+        MDTextField:
+            id: seccao_name
+            hint_text: "Nome da Secção"
+            mode: "rectangle"
+            color: 1, 0, 1, 1
+            on_text: app.nome_seccao = self.text
+            line_color_focus: 0.5, 0, 1, 1
+        MDTextField:
+            id: seccao_id_responsavel
+            hint_text: "Responsável pela secção"
+            mode: "rectangle"
+            color: 1, 0, 1, 1
+            on_text: app.id_responsavel = self.text
+            line_color_focus: 0.5, 0, 1, 1
+
+        GridLayout:
+            cols: 2
+            padding: 350, 8,0,0
+            MDRaisedButton:
+                text: "Cancelar"
+                on_press: root.limpar_cols1()
+                md_bg_color: 0,0,0,0
+            MDRaisedButton:
+                text: "Alterar"
+                padding: 10, 10
+                on_press: root.limpar_cols(),
+                md_bg_color: 0,0,0,0
+
+
+
+
+
+
+
+
+
+
+
+
+<Content_providers_info>:
+    orientation: "vertical"
+    spacing: "12dp"
+    size_hint_y: None
+    height: "20dp"
+    id: content_dialog_info_providers
+
+
+
+<Content_providers_search>:
+    orientation: "vertical"
+    spacing: "12dp"
+    size_hint_y: None
+    height: "70dp"
+    MDTextField:
+        id: provider_name_search
+        hint_text: "Nome do Fornecedor a procurar"
+        mode: "rectangle"
+        color: 1, 0, 1, 1
+        on_text: app.search_nome = self.text
+        line_color_focus: 0.5, 0, 1, 1
+    GridLayout:
+        cols: 2
+        padding: 350, 8,0,0
+        MDRaisedButton:
+            text: "Cancelar"
+            on_press: root.limpar_box()
+            md_bg_color: 0,0,0,0
+        MDRaisedButton:
+            text: "Alterar"
+            padding: 10, 10
+            on_press: root.limpar_later()
+            md_bg_color: 0,0,0,0
+
+<Content_providers_remove>:
+    orientation: "vertical"
+    spacing: "12dp"
+    size_hint_y: None
+    height: "70dp"
+    id: content_dialog_remove_providers
+    MDTextField:
+        id: provider_name_remove
+        hint_text: "Nome do Fornecedor a remover"
+        mode: "rectangle"
+        color: 1, 0, 1, 1
+        on_text: app.remover_nome = self.text
+        line_color_focus: 0.5, 0, 1, 1
+    GridLayout:
+        cols: 2
+        padding: 350, 8,0,0
+        MDRaisedButton:
+            text: "Cancelar"
+            on_press: root.limpar_box()
+            md_bg_color: 0,0,0,0
+        MDRaisedButton:
+            text: "Alterar"
+            padding: 10, 10
+            on_press: root.limpar_later()
+            md_bg_color: 0,0,0,0
+
+
+<Content_providers>:
+    orientation: "vertical"
+    spacing: "12dp"
+    size_hint_y: None
+    height: "320dp"
+    id: content_dialog_add_providers
+    GridLayout: 
+        cols:1
+        MDTextField:
+            id: provider_name
+            hint_text: "Nome do Fornecedor"
+            mode: "rectangle"
+            color: 1, 0, 1, 1
+            on_text: app.provider_nome = self.text
+            line_color_focus: 0.5, 0, 1, 1
+        MDTextField:
+            id: provider_address
+            hint_text: "Morada do Fornecedor"
+            mode: "rectangle"
+            color: 1, 0, 1, 1
+            on_text: app.provider_morada = self.text
+            line_color_focus: 0.5, 0, 1, 1
+        MDTextField:
+            id: provider_iban
+            hint_text: "IBAN do Fornecedor"
+            mode: "rectangle"
+            color: 1, 0, 1, 1
+            on_text: app.provider_iban = self.text
+            line_color_focus: 0.5, 0, 1, 1
+        MDTextField:
+            id: provider_nif
+            hint_text: "NIF do Fornecedor"
+            mode: "rectangle"
+            color: 1, 0, 1, 1
+            on_text: app.provider_nif = self.text
+            line_color_focus: 0.5, 0, 1, 1
+        MDTextField:
+            id: provider_telefone
+            hint_text: "Telefone do Fornecedor"
+            mode: "rectangle"
+            color: 1, 0, 1, 1
+            on_text: app.provider_telefone = self.text
+            line_color_focus: 0.5, 0, 1, 1
+        MDTextField:
+            id: provider_email
+            hint_text: "Email do Fornecedor"
+            mode: "rectangle"
+            color: 1, 0, 1, 1
+            on_text: app.provider_email = self.text
+            line_color_focus: 0.5, 0, 1, 1
+        GridLayout:
+            cols: 2
+            padding: 350, 8,0,0
+            MDRaisedButton:
+                text: "Cancelar"
+                on_press: root.limpar_cols1()
+                md_bg_color: 0,0,0,0
+            MDRaisedButton:
+                text: "Alterar"
+                padding: 10, 10
+                on_press: root.limpar_cols(),
+                md_bg_color: 0,0,0,0
+
+        
+
+
+        
+        
+
+<Content>:
+    orientation: "vertical"
+    spacing: "12dp"
+    size_hint_y: None
+    height: "120dp"
+    id: content_dialog_change_pass
+    MDTextField:
+        id: old_pass
+        hint_text: "Palavra-passe antiga"
+        mode: "rectangle"
+        required: False
+        color: 1, 0, 1, 1
+        line_color_focus: 0.5, 0, 1, 1
+        icon_right: "shield-key"
+        on_text: app.pass_old_change = self.text
+        size_hint: .9, None
+        password: True
+
+    GridLayout:
+        cols:2
+        MDCheckbox:
+            on_press: root.show_passold(self)
+            size_hint: None, None
+            height: 5
+            width: 20
+
+        MDLabel:
+            text: "Mostrar Palavra-passe"
+            font_size: "13px"
+            color: 0,0,0,.4
+
+    MDTextField:
+        id: new_pass
+        hint_text: "Palavra-passe nova"
+        mode: "rectangle"
+        required: False
+        color: 1, 0, 1, 1
+        line_color_focus: 0.5, 0, 1, 1
+        on_text: app.pass_new_change = self.text
+        icon_right: "shield-key"
+        size_hint: .9, None
+        password: True
+
+    GridLayout:
+        cols:2
+        MDCheckbox:
+            on_press: root.show_passnew(self)
+            size_hint: None, None
+            height: 10
+            width: 20
+
+        MDLabel:
+            text: "Mostrar Palavra-passe"
+            font_size: "13px"
+            color: 0,0,0,.4
+
+    GridLayout:
+        cols: 2
+        padding: 350, 8,0,0
+        MDRaisedButton:
+            text: "Cancelar"
+            on_press: root.limpar_passes()
+            md_bg_color: get_color_from_hex("#673AB7")
+        MDRaisedButton:
+            text: "Alterar"
+            padding: 10, 10
+            on_press: root.alterar_pass()
+            md_bg_color: get_color_from_hex("#673AB7")
+
+<ServersDown@BoxLayout>:
+    name: "ServersDown"
+    orientation: "horizontal"
+    Image:
+        source: "serversdown.png"
+        size_hint: .3, .3
+        pos_hint: {"center_x": 0.5, "center_y": 0.7}
+    MDLabel:
+        font_size: "15px"
+        halign: "center"
+        text: "Parece que algo nao correu como esperado...\nTente novamente mais tarde\nSe o problema persistir contacte o suporte técnico através de:\n18961@alunos.aescas.net"
+    MDRaisedButton:
+        text: "Tentar Novamente"
+        on_press: root.tryagain()
+        md_bg_color: 0.5, 0, 1, 1
+        pos_hint: {"center_x": 0.5, "center_y": 0.4}
+    MDSpinner:
+        size_hint: None, None
+        size: dp(46), dp(46)
+        active: root.spin
+        pos_hint: {"center_x": 0.5, "center_y": 0.3}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<DashboardGerente@FloatLayout>:
+    name: "DashboardGerente"
+    on_pre_enter: root.close_menus(), root.profile_maker(), root.make_providers_list(), root.make_seccao_list(), root.make_empregados_list(),root.make_produtos_list(),root.make_encomendas_list()
+    on_leave: root.close_menus(), root.remove_encomendas_list(), root.remove_providers_list(), root.remove_seccao_list(), root.remove_empregados_list(), root.remove_produtos_list()
+
+    MDBottomNavigation:
+
+        MDBottomNavigationItem: ## Perfil do utilizador
+            name: 'Profile'
+            text: 'Perfil'
+            icon: 'account'
+            badge_icon: "numeric-10"
+            MDCard:
+                border_radius: 20
+                radius: [15]
+                size_hint:None, None
+                size: 300, 400
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                elevation: 10
+                orientation: "vertical"
+                AnchorLayout:
+                    anchor_x: "left"
+                    anchor_y: "top"
+                    MDIconButton:
+                        id:logout
+                        text_color: 0,0,0,1
+                        on_release: root.Logout()
+                        icon: "account-arrow-left"
+
+                GridLayout:
+                    cols: 1
+                    pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                    padding: 40,0,0,0
+                    MDLabel:
+                        text: "ID: " + root.id_utilizador
+                    MDLabel:
+                        text: "Nome: " + root.nome_utilizador
+                    MDLabel:
+                        text: "Cargo: " + root.cargo_utilizador
+                    MDLabel:
+                        text: "Salário: " + root.salario_utilizador
+
+                MDRaisedButton:
+                    opacity: 0
+                MDRectangleFlatIconButton:
+                    id: theme_changer
+                    icon: "palette-outline"
+                    text: "Alterar tema"
+                    pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                    line_color: 0, 0, 0, 0
+                    on_press: app.change_theme()
+                MDRaisedButton:
+                    opacity:0
+                
+                MDRaisedButton:
+                    text: "Mudar palavra-passe"
+                    md_bg_color: 0.5, 0, 1, 1
+                    pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                    size_hint: .6, .4
+                    on_release: root.show_alert_dialog(self)
+
+                MDRaisedButton:
+                    opacity: 0
+                    text: "nadad"
+                    size_hint: None, .1
+
+                MDRaisedButton:
+                    opacity: 0
+
+        #Fim do perfil
+
+        MDBottomNavigationItem:
+            name: 'Providers'
+            text: 'Fornecedores'
+            icon: 'truck'
+            MDLabel:
+                text: "Não tem acesso a esta informação!"
+                halign: "center"
+            MDCard:
+                disabled: app.provider_disable_box
+                opacity: app.provider_opacity
+                size_hint:None, None
+                size: 1100, 400
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                elevation: 15
+                padding: 10
+                orientation: "vertical"
+                
+                BoxLayout:
+                    cols: 6
+                    size_hint_y: None
+                    size_hint_x: 1
+                    padding: 10, 10
+                    size_hint_x:None 
+                    width:1100
+                    height: self.minimum_height + 20 
+
+                    MDLabel: 
+                        text: "Nome"
+                        font_size: 15
+                        halign: "center"
+                    MDLabel: 
+                        text: "Morada"
+                        font_size: 15
+                        halign: "center"
+                    MDLabel: 
+                        text: "Iban"
+                        font_size: 15
+                        halign: "center"
+                    MDLabel: 
+                        text: "NIF"
+                        font_size: 15
+                        halign: "center"
+                    MDLabel: 
+                        text: "Telefone"
+                        font_size: 15
+                        halign: "center"
+                    MDLabel: 
+                        text: "Email"
+                        font_size: 15
+                        halign: "center"
+                    
+                
+                ScrollView:
+                    do_scroll_x: False
+                    GridLayout:
+                        id: provider_data
+                        cols: 6
+                        size_hint_y: None
+                        size_hint_x: 1
+                        padding: 10, 10
+                        size_hint_x:None 
+                        width:1100
+                        height: self.minimum_height + 20 
+                MDSpinner:
+                    size_hint: None, None
+                    size: dp(46), dp(46)
+                    active: root.spin
+                    pos_hint: {"center_x": 0.5, "center_y": 0.7}
+
+                        
+            MDFloatingActionButtonSpeedDial:
+                id: menu_providers
+                md_bg_color: 0.5, 0, 1, 1
+                disabled: app.provider_menu
+                data: app.data_providers
+                root_button_anim: True
+                icon: "tools"
+                label_text_color: 1,1,1,1
+                size_hint: None, None
+                size: .1,.4
+                callback: root.callback_options_provider
+
+
+
+###############################inicio dos produtos
+
+        MDBottomNavigationItem:
+            name: 'Products'
+            text: 'Produtos'
+            icon: 'shopping'
+            badge_icon: "numeric-10"
+            
+            MDCard:
+                size_hint:None, None
+                size: 1100, 400
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                elevation: 15
+                padding: 10
+                orientation: "vertical"
+                
+                BoxLayout:
+                    cols: 7
+                    size_hint_y: None
+                    size_hint_x: 1
+                    padding: 10, 10
+                    size_hint_x:None 
+                    width:1100
+                    height: self.minimum_height + 20 
+
+                    MDLabel: 
+                        text: "ID"
+                        font_size: 15
+                        halign: "center"
+                    MDLabel: 
+                        text: "Nome"
+                        font_size: 15
+                        halign: "center"
+                    MDLabel: 
+                        text: "Secção"
+                        font_size: 15
+                        halign: "center"
+                    MDLabel: 
+                        text: "Preço"
+                        font_size: 15
+                        halign: "center"
+                    MDLabel: 
+                        text: "Stock"
+                        font_size: 15
+                        halign: "center"
+                    MDLabel: 
+                        text: "Fornecedor"
+                        font_size: 15
+                        halign: "center"
+                    MDLabel: 
+                        text: "Descrição"
+                        font_size: 15
+                        halign: "center"
+                    
+                
+                ScrollView:
+                    do_scroll_x: False
+                    GridLayout:
+                        id: produtos_data
+                        cols: 7
+                        size_hint_y: None
+                        size_hint_x: 1
+                        padding: 10, 10
+                        size_hint_x:None 
+                        width:1100
+                        height: self.minimum_height + 20 
+                MDSpinner:
+                    size_hint: None, None
+                    size: dp(46), dp(46)
+                    active: root.spin
+                    pos_hint: {"center_x": 0.5, "center_y": 0.7}
+
+                        
+            MDFloatingActionButtonSpeedDial:
+                id: menu_produtos
+                md_bg_color: 0.5, 0, 1, 1
+                size: 0,0
+                size_hint: None, None
+                size: .1, .4
+                data: app.data_produtos
+                disabled: app.produtos_menu
+                root_button_anim: True
+                icon: "tools"
+                label_text_color: 1,1,1,1
+
+                callback: root.callback_options_produtos
+        #Fim dos produtos
+
+
+        # EMPREGADOS
+        MDBottomNavigationItem:
+            name: 'Employes'
+            text: 'Empregados'
+            icon: 'account-multiple'
+            badge_icon: "numeric-10"
+            MDLabel:
+                halign: "center"
+                text: "Não tem acesso a esta informação!"
+            MDCard:
+                size_hint:None, None
+                disabled: app.empregados_disabled
+                opacity: app.empregados_opacity
+                size: 1100, 400
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                elevation: 15
+                padding: 10
+                orientation: "vertical"
+                
+
+                BoxLayout:
+                    cols: 6
+                    size_hint_y: None
+                    size_hint_x: 1
+                    padding: 10, 10
+                    size_hint_x:None 
+                    width:1100
+                    height: self.minimum_height + 20 
+
+                    MDLabel: 
+                        text: "Nome"
+                        font_size: 15
+                        halign: "center"
+                    MDLabel: 
+                        text: "ID"
+                        font_size: 15
+                        halign: "center"
+                    MDLabel: 
+                        text: "Cargo"
+                        font_size: 15
+                        halign: "center"
+                    MDLabel: 
+                        text: "Estado"
+                        font_size: 15
+                        halign: "center"
+                    MDLabel: 
+                        text: "Secção"
+                        font_size: 15
+                        halign: "center"
+                    MDLabel: 
+                        text: "Salário"
+                        font_size: 15
+                        halign: "center"
+                    
+                
+                ScrollView:
+                    do_scroll_x: False
+                    GridLayout:
+                        id: empregados_data
+                        cols: 6
+                        size_hint_y: None
+                        size_hint_x: 1
+                        padding: 10, 10
+                        size_hint_x:None 
+                        width:1100
+                        height: self.minimum_height + 20 
+                MDSpinner:
+                    size_hint: None, None
+                    size: dp(46), dp(46)
+                    active: root.spin
+                    pos_hint: {"center_x": 0.5, "center_y": 0.7}
+
+                        
+            MDFloatingActionButtonSpeedDial:
+                id: menu_empregados
+                md_bg_color: 0.5, 0, 1, 1
+                disabled: app.empregados_menu
+                data: app.data_empregados
+                size_hint: None, None
+                size: .1,.4
+                root_button_anim: True
+                icon: "tools"
+                label_text_color: 1,1,1,1
+
+                callback: root.callback_options_empregados
+
+
+###############################inicio da secções
+        
+        MDBottomNavigationItem:
+            id: sections
+            
+            name: 'Sections'
+            text: 'Secções'
+            icon: 'storefront'
+            badge_icon: "numeric-10"
+            MDCard:
+                size_hint:None, None
+                size: 1100, 400
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                elevation: 15
+                padding: 10
+                orientation: "vertical"
+                
+                BoxLayout:
+                    cols: 2
+                    size_hint_y: None
+                    size_hint_x: 1
+                    padding: 10, 10
+                    size_hint_x:None 
+                    width:1100
+                    height: self.minimum_height + 20 
+
+                    MDLabel: 
+                        text: "Nome"
+                        font_size: 15
+                        halign: "center"
+                    MDLabel: 
+                        text: "ID do Responsável pela secção"
+                        font_size: 15
+                        halign: "center"
+                    
+                
+                ScrollView:
+                    do_scroll_x: False
+                    GridLayout:
+                        id: seccao_data
+                        cols: 2
+                        size_hint_y: None
+                        size_hint_x: 1
+                        padding: 10, 10
+                        size_hint_x:None 
+                        width:1100
+                        height: self.minimum_height + 20 
+                MDSpinner:
+                    size_hint: None, None
+                    size: dp(46), dp(46)
+                    active: root.spin
+                    pos_hint: {"center_x": 0.5, "center_y": 0.7}
+
+                        
+            MDFloatingActionButtonSpeedDial:
+                id: menu_seccao
+                disabled: app.seccoes_menu
+                md_bg_color: 0.5, 0, 1, 1
+                data: app.data_seccao
+                root_button_anim: True
+                icon: "tools"
+                label_text_color: 1,1,1,1
+                size_hint: None, None
+                size: .1,.4
+                callback: root.callback_options_seccao
+
+        
+        MDBottomNavigationItem:
+            name: 'Encomendas'
+            text: 'Encomendas'
+            icon: 'newspaper-variant-multiple-outline'
+            badge_icon: "numeric-10"
+            MDLabel:
+                text: "Não tem acesso a este conteúdo!"
+                halign: "center"
+            
+            MDCard:
+                
+                size_hint:None, None
+                size: 1100, 400
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                elevation: 15
+                padding: 10
+                orientation: "vertical"
+                
+                BoxLayout:
+                    cols: 6
+                    size_hint_y: None
+                    size_hint_x: 1
+                    padding: 10, 10
+                    size_hint_x:None 
+                    width:1100
+                    height: self.minimum_height + 20 
+
+                    MDLabel: 
+                        text: "ID da encomenda"
+                        font_size: 15
+                        halign: "center"
+                    MDLabel: 
+                        text: "Conteúdo"
+                        font_size: 15
+                        halign: "center"
+                    MDLabel: 
+                        text: "Morada Entrega"
+                        font_size: 15
+                        halign: "center"
+                    MDLabel: 
+                        text: "Morada Faturação"
+                        font_size: 15
+                        halign: "center"
+                    MDLabel: 
+                        text: "Valor Total"
+                        font_size: 15
+                        halign: "center"
+                    MDLabel: 
+                        text: "Estado"
+                        font_size: 15
+                        halign: "center"
+                    MDLabel: 
+                        text: "Data de encomenda"
+                        font_size: 15
+                        halign: "center"
+                    MDLabel: 
+                        text: "Data de entrega"
+                        font_size: 15
+                        halign: "center"
+                    
+                
+                ScrollView:
+                    do_scroll_x: False
+                    GridLayout:
+                        id: encomendas_data
+                        cols: 8
+                        size_hint_y: None
+                        size_hint_x: 1
+                        padding: 10, 10
+                        size_hint_x:None 
+                        width:1100
+                        height: self.minimum_height + 20 
+                MDSpinner:
+                    size_hint: None, None
+                    size: dp(46), dp(46)
+                    active: root.spin
+                    pos_hint: {"center_x": 0.5, "center_y": 0.7}
+
+            
+            
+
+<Login@FloatLayout>:
+    name: "Login"
+    on_leave: print("acabei de sair")
+    MDCard:
+        size_hint:None, None
+        size: 300, 400
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        padding: 10
+        orientation: "vertical"
+        Image:
+            source: "logo_xenox.png"
+            size_hint: None, None
+            size: 75, 75
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        MDLabel:
+            text:"Software de Gestão de Stocks"
+            font_size: 10
+            halign: "center"
+            height: 0
+        MDTextField:
+            id: text_field_user
+            mode: "rectangle"
+            required: False
+            color_mode: 'custom'
+            color: 1, 0, 1, 1
+            hint_text: "Nome de Utilizador"
+            line_color_focus: 0.5, 0, 1, 1
+            size_hint: .9, None
+            pos_hint: {"center_x": 0.5}
+            icon_right: "account"
+
+        MDTextField:
+            id: text_field_pass
+            required: False
+            mode: "rectangle"
+            color_mode: 'custom'
+            color: 0.5, 0, 1, 1
+            hint_text: "Palavra-passe" 
+            line_color_focus: 0.5, 0, 1, 1
+            size_hint: .9, None
+            pos_hint: {"center_x": 0.5}
+            icon_right: 'key-variant'
+            password: True
+            
+        GridLayout:
+            cols:2
+            MDCheckbox:
+                on_press: root.show_pass(self)
+                size_hint: .1, .1
+                height: 20
+
+            MDLabel:
+                text: "Mostrar Palavra-passe"
+                font_size: "13px"
+                color: 0,0,0,.4
+
+        MDRaisedButton:
+            text: "Login"
+            md_bg_color: 0.5, 0, 1, 1
+            on_press: root.validate_login()
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+            
+        MDRaisedButton:
+            opacity: 0
+        MDRaisedButton:
+            opacity: 0
+        MDRaisedButton:
+            opacity: 0
+
+        
+            

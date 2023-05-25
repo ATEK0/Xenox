@@ -1,0 +1,7 @@
+utilizador: 5000 ##gerente
+palavra-passe: 1
+
+utilizador: 5004 ##estagiario
+palavra-passe: 1234
+
+
